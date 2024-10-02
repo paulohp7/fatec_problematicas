@@ -58,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 50),
+          margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 100),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
