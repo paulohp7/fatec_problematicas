@@ -9,7 +9,10 @@ class TecmerpApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(useMaterial3: true),
+      theme: ThemeData(
+        useMaterial3: true,
+        scaffoldBackgroundColor: const Color(0xFFFFFFFF),
+        ),
       routes: {
         "/login": (context) => LoginPage(),
         "/new-account": (context) => NewAccountPage(),
