@@ -230,17 +230,20 @@ class _LoginPageState extends State<LoginPage> {
                   },
                 ),
               ),
-            ),
-
-            // --------- Botão de criar uma conta ----------
-            Container(
-              margin: EdgeInsets.only(top: 12),
-              width: MediaQuery.of(context).size.width,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Color(0xFF169172), // Cor do splash quando aperta o botão
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12), // Borda circular
+        
+              // --------- Botão de criar uma conta ----------
+              Container(
+                margin: EdgeInsets.only(top: 12),
+                width: MediaQuery.of(context).size.width,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Color.fromARGB(255, 22, 145, 114), // Cor do splash quando aperta o botão
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12), // Borda circular
+                    ),
+                    minimumSize: Size(260, 80),
+                    backgroundColor: Colors.white,
+                    side: BorderSide(width: 2, color: Color(0xFF4CA087))
                   ),
                   onPressed: () {
                     Navigator.pushNamed(context, '/new-account');
