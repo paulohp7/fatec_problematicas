@@ -236,6 +236,7 @@ class _LoginPageState extends State<LoginPage> {
               width: MediaQuery.of(context).size.width,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
+                  foregroundColor: Color(0xFF169172), // Cor do splash quando aperta o botão
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12), // Borda circular
                   ),
