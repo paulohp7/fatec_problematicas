@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'login.page.dart';
 import 'newaccount.page.dart';
+import 'mysubjects.page.dart';
+import 'subject.page.dart';
 
 class TecmerpApp extends StatelessWidget {
   const TecmerpApp({super.key});
@@ -16,8 +18,10 @@ class TecmerpApp extends StatelessWidget {
       routes: {
         "/login": (context) => LoginPage(),
         "/new-account": (context) => NewAccountPage(),
+        "/my-subjects": (context) => MySubjects(),
+        "/subject": (context) => Subject(),
       },
-      initialRoute: "/login",
+      initialRoute: "/my-subjects",
     );
   }
 }
