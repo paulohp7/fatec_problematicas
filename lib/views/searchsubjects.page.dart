@@ -1,9 +1,19 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:fatec_problematicas/utils/filter_dialog.dart';
 import 'package:flutter/material.dart';
 
 class SearchSubjects extends StatelessWidget {
   const SearchSubjects({super.key});
+
+  Future<void> applyFilter(BuildContext context) {
+    return showDialog<void>(
+      context: context, 
+      builder: (context) {
+        return FilterDialog();
+      }
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +67,7 @@ class SearchSubjects extends StatelessWidget {
             child: TextField(
               decoration: InputDecoration(
                 hintText: "Digite sua busca",
+                border: OutlineInputBorder(),
                 suffixIcon: Icon(Icons.search_rounded)
               ),
             ),
@@ -67,14 +78,26 @@ class SearchSubjects extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(20),
                 child: ElevatedButton(
-                  onPressed: () => {}, 
-                  child: Text('Aplicar Filtros')),
+                  onPressed: () => applyFilter(context), 
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Aplicar Filtros'),
+                      Icon(Icons.filter_list_rounded)
+                    ],
+                  )),
               ),
               Container(
                 padding: EdgeInsets.all(20),
                 child: ElevatedButton(
                   onPressed: () => {}, 
-                  child: Text('Limpar Filtros')),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Limpar Filtros'),
+                      Icon(Icons.filter_list_off_rounded)
+                    ],
+                  )),
               ),
             ],
           ),

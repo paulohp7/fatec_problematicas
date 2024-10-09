@@ -87,7 +87,8 @@ class _MyFormState extends State<MyForm> {
               maxLines: 50,
               minLines: 1,
               decoration: InputDecoration(
-                hintText: 'Escreva a descrição do assunto aqui'
+                hintText: 'Escreva a descrição do assunto aqui',
+                border: OutlineInputBorder()
               ),
               validator: (String? value) {
                 if (value == null || value.isEmpty) {
@@ -107,7 +108,29 @@ class _MyFormState extends State<MyForm> {
               maxLines: 50,
               minLines: 1,
               decoration: InputDecoration(
-                hintText: 'Escreva quais dados serão disponíveis aqui'
+                hintText: 'Escreva quais dados serão disponíveis aqui',
+                border: OutlineInputBorder()
+              ),
+              validator: (String? value) {
+                if (value == null || value.isEmpty) {
+                  return 'Texto em branco!';
+                }
+                return null;
+              },
+            ),
+            SizedBox(height: 20),
+                        Text(
+              style: TextStyle(
+                fontSize: 20
+              ),
+              'Link externo do assunto:'
+            ),
+            TextFormField(
+              maxLines: 2,
+              minLines: 1,
+              decoration: InputDecoration(
+                hintText: 'Cole aqui o link externo',
+                border: OutlineInputBorder()
               ),
               validator: (String? value) {
                 if (value == null || value.isEmpty) {
@@ -132,26 +155,6 @@ class _MyFormState extends State<MyForm> {
               'Área computacional necessária:'
             ),
             ComputationalAreaDropdownButton(),
-            SizedBox(height: 20),
-            Text(
-              style: TextStyle(
-                fontSize: 20
-              ),
-              'Link externo do assunto:'
-            ),
-            TextFormField(
-              maxLines: 2,
-              minLines: 1,
-              decoration: InputDecoration(
-                hintText: 'Cole aqui o link externo'
-              ),
-              validator: (String? value) {
-                if (value == null || value.isEmpty) {
-                  return 'Texto em branco!';
-                }
-                return null;
-              },
-            ),
             SizedBox(height: 20),
             Center(
               child: Container(
