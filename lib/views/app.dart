@@ -1,3 +1,4 @@
+import 'package:fatec_problematicas/views/editprofile.page.dart';
 import 'package:flutter/material.dart';
 import 'login.page.dart';
 import 'newaccount.page.dart';
@@ -25,7 +26,8 @@ class TecmerpApp extends StatelessWidget {
         "/subject": (context) => Subject(),
         "/search-subjects": (context) => SearchSubjects(),
         "/new-subject": (context) => NewSubject(),
-        "/requester-home": (context) => RequesterHome()
+        "/requester-home": (context) => RequesterHome(),
+        "/edit-profile": (context) => EditProfile()
       },
       initialRoute: "/login",
     );

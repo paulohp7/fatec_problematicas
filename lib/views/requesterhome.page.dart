@@ -134,7 +134,7 @@ class HomeWidget extends StatelessWidget {
                           backgroundColor: Color(0xFF4DC09E),
                         ),
                         onPressed: () {
-                          // Navigator.pushNamed(context, '/edit-profile');
+                        Navigator.pushNamed(context, '/edit-profile');
                         },
                         child: Text(
                           "Editar",
