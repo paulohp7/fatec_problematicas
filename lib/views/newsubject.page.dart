@@ -41,11 +41,19 @@ class NewSubject extends StatelessWidget {
                     color: Color(0xFF3D3D3D),
                   ),
                 ),
-                IconButton(
-                  icon: Icon(Icons.logout_rounded, color: Color(0xFF3D3D3D)),
-                  onPressed: () {
-                    // Navigator.of(context).pop(); 
-                  },
+                
+                Container(
+                  padding: EdgeInsets.all(2), // Tamanho do círculo
+                  decoration: BoxDecoration(
+                    color: Color(0xFF4DC09E),
+                    shape: BoxShape.circle,
+                  ),
+                  child: IconButton(
+                    icon: Icon(Icons.logout_rounded, color: Color(0xFF13715B)),
+                    onPressed: () {
+                      // Navigator.of(context).pop(); 
+                    },
+                  ),
                 ),
               ],
             ),
@@ -72,98 +80,240 @@ class _MyFormState extends State<MyForm> {
     return Form(
       key: _formKey,
       child: SingleChildScrollView(
-        padding: EdgeInsets.all(30),
+        padding: EdgeInsets.all(45),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               style: TextStyle(
-                fontSize: 20
+                fontFamily: 'Inter',
+                fontSize: 19.5,
+                fontWeight: FontWeight.w900,
+                color: Color(0xFF3D3D3D)
               ),
               'Descrição:'
             ),
-            TextFormField(
-              maxLines: 50,
-              minLines: 1,
-              decoration: InputDecoration(
-                hintText: 'Escreva a descrição do assunto aqui',
-                border: OutlineInputBorder()
+
+            // --------- Campo da descrição ----------
+            Container(
+              margin: EdgeInsets.only(top: 5),
+              padding: EdgeInsets.all(7), // Tamanho do campo
+              decoration: BoxDecoration(
+                color: Color(0xFFF7F7FC),
+                borderRadius: BorderRadius.circular(12), // Bordas arredondadas
+                border: Border.all(
+                  color: Color(0xFF565656), // Cor do contorno
+                  width: 1.5, // Largura do contorno
+                ),
               ),
-              validator: (String? value) {
-                if (value == null || value.isEmpty) {
-                  return 'Texto em branco!';
-                }
-                return null;
-              },
+              child: TextFormField(
+                maxLines: 50,
+                minLines: 1,
+                style: TextStyle(
+                      fontFamily: 'Inter', // estilo do texto digitado no campo
+                      fontSize: 18,
+                    ),
+                decoration: InputDecoration(
+                  hintText: 'Escreva a descrição do assunto aqui',
+                  hintStyle: TextStyle(
+                        fontFamily: 'Inter',
+                        fontSize: 18,
+                        color: Color(0xFF696969)
+                      ),
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+                ),
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Texto em branco!';
+                  }
+                  return null;
+                },
+              ),
             ),
+
             SizedBox(height: 20),
+
             Text(
               style: TextStyle(
-                fontSize: 20
+                fontFamily: 'Inter',
+                fontSize: 19.5,
+                fontWeight: FontWeight.w900,
+                color: Color(0xFF3D3D3D)
               ),
               'Dados disponíveis para análise:'
             ),
-            TextFormField(
-              maxLines: 50,
-              minLines: 1,
-              decoration: InputDecoration(
-                hintText: 'Escreva quais dados serão disponíveis aqui',
-                border: OutlineInputBorder()
+
+            // --------- Campo de dados disponíveis ----------
+            Container(
+              margin: EdgeInsets.only(top: 5),
+              padding: EdgeInsets.all(7), // Tamanho do campo
+              decoration: BoxDecoration(
+                color: Color(0xFFF7F7FC),
+                borderRadius: BorderRadius.circular(12), // Bordas arredondadas
+                border: Border.all(
+                  color: Color(0xFF565656), // Cor do contorno
+                  width: 1.5, // Largura do contorno
+                ),
               ),
-              validator: (String? value) {
-                if (value == null || value.isEmpty) {
-                  return 'Texto em branco!';
-                }
-                return null;
-              },
+              child: TextFormField(
+                maxLines: 50,
+                minLines: 1,
+                style: TextStyle(
+                      fontFamily: 'Inter', // estilo do texto digitado no campo
+                      fontSize: 18,
+                    ),
+                decoration: InputDecoration(
+                  hintText: 'Escreva quais dados serão disponíveis',
+                  hintStyle: TextStyle(
+                        fontFamily: 'Inter',
+                        fontSize: 18,
+                        color: Color(0xFF696969)
+                      ),
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+                ),
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Texto em branco!';
+                  }
+                  return null;
+                },
+              ),
             ),
+
             SizedBox(height: 20),
-                        Text(
+
+            Text(
               style: TextStyle(
-                fontSize: 20
+                fontFamily: 'Inter',
+                fontSize: 19.5,
+                fontWeight: FontWeight.w900,
+                color: Color(0xFF3D3D3D)
               ),
               'Link externo do assunto:'
             ),
-            TextFormField(
-              maxLines: 2,
-              minLines: 1,
-              decoration: InputDecoration(
-                hintText: 'Cole aqui o link externo',
-                border: OutlineInputBorder()
+
+            // --------- Campo de link externo ----------
+            Container(
+              margin: EdgeInsets.only(top: 5),
+              padding: EdgeInsets.all(7), // Tamanho do campo
+              decoration: BoxDecoration(
+                color: Color(0xFFF7F7FC), // Cor de fundo do campo
+                borderRadius: BorderRadius.circular(12), // Bordas arredondadas
+                border: Border.all(
+                  color: Color(0xFF565656), // Cor do contorno
+                  width: 1.5, // Largura do contorno
+                ),
               ),
-              validator: (String? value) {
-                if (value == null || value.isEmpty) {
-                  return 'Texto em branco!';
-                }
-                return null;
-              },
+              child: TextFormField(
+                maxLines: 2,
+                minLines: 1,
+                style: TextStyle(
+                      fontFamily: 'Inter', // estilo do texto digitado no campo
+                      fontSize: 18,
+                    ),
+                decoration: InputDecoration(
+                  hintText: 'Cole aqui o link externo',
+                  hintStyle: TextStyle(
+                        fontFamily: 'Inter',
+                        fontSize: 18,
+                        color: Color(0xFF696969)
+                      ),
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.symmetric(vertical: 20, horizontal: 16) // ---------
+                ),
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Texto em branco!';
+                  }
+                  return null;
+                },
+              ),
             ),
+
             SizedBox(height: 20),
+
             Text(
               style: TextStyle(
-                fontSize: 20
+                fontFamily: 'Inter',
+                fontSize: 19.5,
+                fontWeight: FontWeight.w900,
+                color: Color(0xFF3D3D3D)
               ),
-              'Área da saúde abordado:'
+              'Área da saúde abordada:'
             ),
-            HealthAreaDropdownButton(),
+
+            // --------- Campo de seleção da área da saúde ----------
+            Container(
+              margin: EdgeInsets.only(top: 5),
+              padding: EdgeInsets.all(20), // Tamanho do campo
+              decoration: BoxDecoration(
+                color: Color(0xFFF7F7FC),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: const Color(0xFF565656), // Cor do contorno do campo
+                  width: 1.5, // Largura do contorno
+                ),
+              ),
+              child: HealthAreaDropdownButton()
+            ),
+
              SizedBox(height: 20),
+
             Text(
               style: TextStyle(
-                fontSize: 20
+                fontFamily: 'Inter',
+                fontSize: 19.5,
+                fontWeight: FontWeight.w900,
+                color: Color(0xFF3D3D3D)
               ),
               'Área computacional necessária:'
             ),
-            ComputationalAreaDropdownButton(),
+
+            // --------- Campo de seleção da área computacional ----------
+            Container(
+              margin: EdgeInsets.only(top: 5),
+              padding: EdgeInsets.all(20), // Tamanho do campo
+              decoration: BoxDecoration(
+                color: Color(0xFFF7F7FC),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: const Color(0xFF565656), // Cor do contorno do campo
+                  width: 1.5, // Largura do contorno
+                ),
+              ),
+              child: ComputationalAreaDropdownButton()
+            ),
+
             SizedBox(height: 20),
+
+            // --------- Botão de cadastrar assunto ----------
             Center(
               child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 100),
+                margin: EdgeInsets.only(top: 25, bottom: 15),
+                width: MediaQuery.of(context).size.width,
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12), // Borda circular
+                    ),
+                    minimumSize: Size(260, 80),
+                    backgroundColor: Color(0xFF4DC09E),
+                  ),
                   onPressed: () => {
                     if (_formKey.currentState!.validate()) {}
                   }, 
-                  child: Text('Cadastrar') 
+                  child: Text(
+                    'Cadastrar assunto',
+                    style: TextStyle(
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      color: Color(0xFF13715B),
+                    ),
+                  ) 
                 ),
               ),
             )
@@ -188,7 +338,17 @@ class _HealthAreaDropdownButtonState extends State<HealthAreaDropdownButton> {
   Widget build(BuildContext context) {
     return DropdownButtonFormField(
       value: dropdownValue,
-      hint: Text('Selecione uma opção'),
+      hint: // Container(
+        // padding: EdgeInsets.only(left: 16),
+        // child: 
+        Text('Selecione uma opção'),
+      // ),
+      style: TextStyle(
+        fontFamily: 'Inter',
+        fontSize: 18,
+        color: Color(0xFF696969)
+      ),
+      decoration: InputDecoration.collapsed(hintText: ''), // Remover underline
       items: healthList.map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
           value: value,
@@ -219,7 +379,17 @@ class _ComputationalAreaDropdownButton extends State<ComputationalAreaDropdownBu
   Widget build(BuildContext context) {
     return DropdownButtonFormField(
       value: dropdownValue,
-      hint: Text('Selecione uma opção'),
+      hint: // Container(
+        // padding: EdgeInsets.only(left: 16),
+        // child: 
+        Text('Selecione uma opção'),
+      // ),
+      style: TextStyle(
+        fontFamily: 'Inter',
+        fontSize: 18,
+        color: Color(0xFF696969)
+      ),
+      decoration: InputDecoration.collapsed(hintText: ''), // Remover underline
       items: computationalList.map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
           value: value,
