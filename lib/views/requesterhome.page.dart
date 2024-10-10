@@ -101,7 +101,7 @@ class HomeWidget extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 30, horizontal: 50),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 // Coluna com o nome e o botão
                 Column(
@@ -149,22 +149,12 @@ class HomeWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(width: 65), // espaço entre o nome/botão e a foto
-                Align(
-                  alignment: Alignment(-1.0, -1.0),
-                  child: Container(
-                    width: 110,
-                    height: 110,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFFFFFFF),
-                      borderRadius: BorderRadius.circular(100),
-                      border: Border.all(
-                        color: Color(0xFF3D3D3D), // Cor do contorno
-                        width: 4, // Largura do contorno
-                      ),
-                    ),
-                  ),
-                ),
+                // SizedBox(width: 65), // espaço entre o nome/botão e a foto
+                // 
+                CircleAvatar(
+                  backgroundImage: NetworkImage('https://picsum.photos/200'),
+                  radius: 60,
+                )
               ],
             ),
           ),
@@ -200,7 +190,7 @@ class NewSubjectButton extends StatelessWidget {
           backgroundColor: Color(0xFF4DC09E),
         ),
         child: Text(
-          "Cadastrar novo assunto",
+          "Novo assunto",
           style: TextStyle(
             fontFamily: 'Inter',
             fontWeight: FontWeight.bold,
