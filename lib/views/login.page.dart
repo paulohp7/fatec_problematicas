@@ -227,6 +227,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   onPressed: () {
                     // signIn(context); // chama o método de login --------------- REMOVER COMENTÁRIO
+                    Navigator.pushNamed(context, '/requester-home');
                   },
                 ),
               ),
