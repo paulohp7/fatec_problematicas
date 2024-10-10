@@ -19,7 +19,7 @@ class Subject extends StatelessWidget {
             padding: const EdgeInsets.only(top: 45.0), // Espaçamento superior
             child: Row(
               // crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 // SizedBox(width: 16),
                 IconButton(
@@ -28,16 +28,16 @@ class Subject extends StatelessWidget {
                     Navigator.of(context).pop(); // Volta para a página anterior
                   },
                 ),
-                //SizedBox(width: 15), // Espaço entre a seta e o texto
-                // Text(
-                //   "Página",
-                //   style: TextStyle(
-                //     fontSize: 34,
-                //     fontFamily: 'Inter',
-                //     fontWeight: FontWeight.w800,
-                //     color: Color(0xFF3D3D3D),
-                //   ),
-                //),
+                // SizedBox(width: 15), // Espaço entre a seta e o texto
+                Text(
+                  "Assunto",
+                  style: TextStyle(
+                    fontSize: 34,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w800,
+                    color: Color(0xFF3D3D3D),
+                  ),
+                ),
                 IconButton(
                   icon: Icon(Icons.logout_rounded, color: Color(0xFF3D3D3D)),
                   onPressed: () {
