@@ -3,8 +3,15 @@
 import 'package:fatec_problematicas/utils/filter_dialog.dart';
 import 'package:flutter/material.dart';
 
-class SearchSubjects extends StatelessWidget {
+class SearchSubjects extends StatefulWidget {
   const SearchSubjects({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _SearchSubjectsState createState() => _SearchSubjectsState();
+}
+
+class _SearchSubjectsState extends State<SearchSubjects> {
 
   Future<void> applyFilter(BuildContext context) {
     return showDialog<void>(
@@ -14,7 +21,37 @@ class SearchSubjects extends StatelessWidget {
       }
     );
   }
+  // Variável para controlar quando o botão "Pesquisar" foi clicado
+  bool pesquisado = false;
+  // Lista mock de problemas
+  List<Map<String, String>> problemas = [
+    {"titulo": "Problema 1", "descricao": "Descrição do problema 1", "AreaSaude": "Oncologia", "AreaComputacional": "IA"},
+    {"titulo": "Problema 2", "descricao": "Descrição do problema 2", "AreaSaude": "Cardiologia", "AreaComputacional": "Desenvolvimento"},
+    {"titulo": "Problema 3", "descricao": "Descrição do problema 3", "AreaSaude": "Ginecologia", "AreaComputacional": "Cloud"},
+    {"titulo": "Problema 4", "descricao": "Descrição do problema 4", "AreaSaude": "Urologia", "AreaComputacional": "Segurança"},
+    {"titulo": "Problema 5", "descricao": "Descrição do problema 5", "AreaSaude": "Oncologia", "AreaComputacional": "IA"},
+  ];
+  List<Map<String, String>> resultadosBusca = [];
+  String buscaTexto = ""; 
+  final TextEditingController controller = TextEditingController();
 
+  @override
+  void initState() {
+    super.initState();
+    resultadosBusca = problemas;
+  }
+
+  void filtrarProblemas(String texto) {
+    setState(() {
+      pesquisado = true; 
+    });
+  }
+
+  void limparBusca(){
+    setState(() {
+      pesquisado = false;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,15 +77,14 @@ class SearchSubjects extends StatelessWidget {
                 ),
                 //SizedBox(width: 15), // Espaço entre a seta e o texto
                 Text(
-                  "Buscar Assunto",
+                  "Buscar Assuntos",
                   style: TextStyle(
-                    fontSize: 34,
+                    fontSize: 28,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w800,
                     color: Color(0xFF3D3D3D),
                   ),
                 ),
-
                 Container(
                   padding: EdgeInsets.all(2), // Tamanho do círculo
                   decoration: BoxDecoration(
@@ -71,7 +107,7 @@ class SearchSubjects extends StatelessWidget {
 
       body: Column(
         children: [
-
+          
           // --------- Campo de Busca ----------
           Container(
             margin: EdgeInsets.only(top: 20),
@@ -101,6 +137,9 @@ class SearchSubjects extends StatelessWidget {
                 contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
                 suffixIcon: Icon(Icons.search_rounded)
               ),
+              onSubmitted: (value) {
+                filtrarProblemas(value); // Realiza a busca ao pressionar "Enter"
+              },
             ),
           ),
           Row(
@@ -109,7 +148,7 @@ class SearchSubjects extends StatelessWidget {
 
               // --------- Botão de aplicar filtros ----------
               Container(
-                padding: EdgeInsets.all(20),
+                padding: EdgeInsets.all(10),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
@@ -144,7 +183,7 @@ class SearchSubjects extends StatelessWidget {
 
               // --------- Botão de limpar filtros ----------
               Container(
-                padding: EdgeInsets.all(20),
+                padding: EdgeInsets.all(10),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(

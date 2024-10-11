@@ -30,15 +30,14 @@ class Subject extends StatelessWidget {
                 ),
                 // SizedBox(width: 15), // Espaço entre a seta e o texto
                 Text(
-                  "Assunto",
+                  "Assuntos",
                   style: TextStyle(
-                    fontSize: 34,
+                    fontSize: 28,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w800,
                     color: Color(0xFF3D3D3D),
                   ),
                 ),
-
                 Container(
                   padding: EdgeInsets.all(2), // Tamanho do círculo
                   decoration: BoxDecoration(
