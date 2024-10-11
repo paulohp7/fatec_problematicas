@@ -96,7 +96,7 @@ class Subject extends StatelessWidget {
           ListTile(
             title: Row(
               children: [
-                SizedBox(width: 40),
+                SizedBox(width: 20),
                 Icon(Icons.circle_rounded, size: 10),
                 SizedBox(width: 10),
                 Text(
@@ -111,7 +111,7 @@ class Subject extends StatelessWidget {
               ],
             ),
             subtitle: Container(
-              margin: EdgeInsets.only(top: 20, bottom: 20, left: 50, right: 50),
+              margin: EdgeInsets.only(top: 20, bottom: 20, left: 20, right: 20),
               child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo facilisis purus a suscipit."
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo facilisis purus a suscipit."
@@ -134,11 +134,12 @@ class Subject extends StatelessWidget {
           ListTile(
             title: Row(
               children: [
-                SizedBox(width: 40),
+                SizedBox(width: 20),
                 Icon(Icons.circle_rounded, size: 10),
                 SizedBox(width: 10),
                 Text(
-                  "Dados disponíveis para análise:",
+                  overflow: TextOverflow.clip, 
+                  "Dados disponíveis:",
                   style: TextStyle(
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.bold,
@@ -151,7 +152,7 @@ class Subject extends StatelessWidget {
             subtitle: Container(
               margin: EdgeInsets.only(top: 20),
               child: Container(
-                margin: EdgeInsets.only(bottom: 20, left: 50, right: 50),
+                margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
                 child: Text(
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo facilisis purus a suscipit."
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo facilisis purus a suscipit."
@@ -171,7 +172,7 @@ class Subject extends StatelessWidget {
           ListTile(
             title: Row(
               children: [
-                SizedBox(width: 40),
+                SizedBox(width: 20),
                 Icon(Icons.circle_rounded, size: 10),
                 SizedBox(width: 10),
                 Text(
@@ -186,7 +187,7 @@ class Subject extends StatelessWidget {
               ],
             ),
             subtitle: Container(
-              margin: EdgeInsets.only(top: 20, bottom: 20, left: 50, right: 50),
+              margin: EdgeInsets.only(top: 20, bottom: 20, left: 20, right: 20),
               child: Text(
                 "Uma área de saúde qualquer",
                 style: TextStyle(
@@ -201,11 +202,11 @@ class Subject extends StatelessWidget {
          ListTile(
             title: Row(
               children: [
-                SizedBox(width: 40),
+                SizedBox(width: 20),
                 Icon(Icons.circle_rounded, size: 10),
                 SizedBox(width: 10),
                 Text(
-                  "Área computacional necessária:",
+                  "Área computacional:",
                   style: TextStyle(
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.bold,
@@ -216,7 +217,7 @@ class Subject extends StatelessWidget {
               ],
             ),
             subtitle: Container(
-              margin: EdgeInsets.only(top: 20, bottom: 20, left: 50, right: 50),
+              margin: EdgeInsets.only(top: 20, bottom: 20, left: 20, right: 20),
               child: Text(
                 "Uma área computacional qualquer",
                 style: TextStyle(
@@ -231,7 +232,7 @@ class Subject extends StatelessWidget {
           ListTile(
             title: Row(
               children: [
-                SizedBox(width: 40),
+                SizedBox(width: 20),
                 Icon(Icons.circle_rounded, size: 10),
                 SizedBox(width: 10),
                 Text(
@@ -246,7 +247,7 @@ class Subject extends StatelessWidget {
               ],
             ),
             subtitle: Container(
-              margin: EdgeInsets.only(top: 20, bottom: 20, left: 50, right: 50),
+              margin: EdgeInsets.only(top: 20, bottom: 20, left: 20, right: 20),
               child: Text(
                 "Um texto em forma de link",
                 style: TextStyle(
@@ -261,7 +262,7 @@ class Subject extends StatelessWidget {
           ListTile(
             title: Row(
               children: [
-                SizedBox(width: 40),
+                SizedBox(width: 20),
                 Icon(Icons.circle_rounded, size: 10),
                 SizedBox(width: 10),
                 Text(
@@ -271,12 +272,12 @@ class Subject extends StatelessWidget {
                     fontSize: 23,
                     color: Color(0xFF3D3D3D),
                   ),
-                  "Data da publicação do assunto:"
+                  "Data de publicação:"
                 ),
               ],
             ),
             subtitle: Container(
-              margin: EdgeInsets.only(top: 20, bottom: 20, left: 50, right: 50),
+              margin: EdgeInsets.only(top: 20, bottom: 20, left: 20, right: 20),
               child: Text(
                 "99/99/9999",
                 style: TextStyle(

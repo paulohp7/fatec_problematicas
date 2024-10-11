@@ -127,7 +127,7 @@ class SearchSubjects extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                          fontSize: 12,
                           color: const Color(0xFF216655),
                         ),
                       ),
@@ -162,7 +162,7 @@ class SearchSubjects extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                          fontSize: 12,
                           color: const Color(0xFF287A65),
                         ),
                       ),
