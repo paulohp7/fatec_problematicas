@@ -1,9 +1,12 @@
+import 'package:fatec_problematicas/views/editprofile.page.dart';
 import 'package:flutter/material.dart';
 import 'login.page.dart';
 import 'newaccount.page.dart';
 import 'mysubjects.page.dart';
+import 'requesterhome.page.dart';
 import 'subject.page.dart';
 import 'searchsubjects.page.dart';
+import 'newsubject.page.dart';
 
 class TecmerpApp extends StatelessWidget {
   const TecmerpApp({super.key});
@@ -21,9 +24,12 @@ class TecmerpApp extends StatelessWidget {
         "/new-account": (context) => NewAccountPage(),
         "/my-subjects": (context) => MySubjects(),
         "/subject": (context) => Subject(),
-        "/search-subjects": (context) => SearchSubjects()
+        "/search-subjects": (context) => SearchSubjects(),
+        "/new-subject": (context) => NewSubject(),
+        "/requester-home": (context) => RequesterHome(),
+        "/edit-profile": (context) => EditProfile()
       },
-      initialRoute: "/search-subjects",
+      initialRoute: "/login",
     );
   }
 }

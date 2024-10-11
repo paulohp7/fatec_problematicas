@@ -30,7 +30,7 @@ class MySubjects extends StatelessWidget {
                 ),
                 //SizedBox(width: 15), // Espaço entre a seta e o texto
                 Text(
-                  "Meu Assuntos",
+                  "Meus Assuntos",
                   style: TextStyle(
                     fontSize: 34,
                     fontFamily: 'Inter',
