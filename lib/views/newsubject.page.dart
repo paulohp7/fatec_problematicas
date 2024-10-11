@@ -85,6 +85,57 @@ class _MyFormState extends State<MyForm> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+
+            Text(
+              style: TextStyle(
+                fontFamily: 'Inter',
+                fontSize: 19.5,
+                fontWeight: FontWeight.w900,
+                color: Color(0xFF3D3D3D)
+              ),
+              'Título:'
+            ),
+
+            // --------- Campo do título ----------
+            Container(
+              margin: EdgeInsets.only(top: 5),
+              padding: EdgeInsets.all(7), // Tamanho do campo
+              decoration: BoxDecoration(
+                color: Color(0xFFF7F7FC),
+                borderRadius: BorderRadius.circular(12), // Bordas arredondadas
+                border: Border.all(
+                  color: Color(0xFF565656), // Cor do contorno
+                  width: 1.5, // Largura do contorno
+                ),
+              ),
+              child: TextFormField(
+                maxLines: 50,
+                minLines: 1,
+                style: TextStyle(
+                      fontFamily: 'Inter', // estilo do texto digitado no campo
+                      fontSize: 18,
+                    ),
+                decoration: InputDecoration(
+                  hintText: 'Escreva o título do assunto...',
+                  hintStyle: TextStyle(
+                        fontFamily: 'Inter',
+                        fontSize: 18,
+                        color: Color(0xFF696969)
+                      ),
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+                ),
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Texto em branco!';
+                  }
+                  return null;
+                },
+              ),
+            ),
+
+            SizedBox(height: 20),
+            
             Text(
               style: TextStyle(
                 fontFamily: 'Inter',
@@ -115,7 +166,7 @@ class _MyFormState extends State<MyForm> {
                       fontSize: 18,
                     ),
                 decoration: InputDecoration(
-                  hintText: 'Escreva a descrição do assunto aqui',
+                  hintText: 'Escreva a descrição do assunto...',
                   hintStyle: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 18,
@@ -165,7 +216,7 @@ class _MyFormState extends State<MyForm> {
                       fontSize: 18,
                     ),
                 decoration: InputDecoration(
-                  hintText: 'Escreva quais dados serão disponíveis',
+                  hintText: 'Escreva quais dados serão disponíveis...',
                   hintStyle: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 18,
@@ -215,7 +266,7 @@ class _MyFormState extends State<MyForm> {
                       fontSize: 18,
                     ),
                 decoration: InputDecoration(
-                  hintText: 'Cole aqui o link externo',
+                  hintText: 'Cole aqui o link externo...',
                   hintStyle: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 18,
