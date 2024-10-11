@@ -93,15 +93,15 @@ class HomeWidget extends StatelessWidget {
           Divider(
             color: Colors.grey,
             thickness: 1, // Espessura da linha
-            indent: 45,   // Espaçamento à esquerda
-            endIndent: 90, // Espaçamento à direita
+            indent: 70,   // Espaçamento à esquerda
+            endIndent: 70, // Espaçamento à direita
           ),
           
           Container(
             padding: EdgeInsets.symmetric(vertical: 30, horizontal: 50),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // Coluna com o nome e o botão
                 Column(
@@ -149,7 +149,8 @@ class HomeWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                // SizedBox(width: 65), // espaço entre o nome/botão e a foto
+                
+                SizedBox(width: 65), // espaço entre o nome/botão e a foto
                 // 
                 CircleAvatar(
                   backgroundImage: NetworkImage('https://picsum.photos/200'),
