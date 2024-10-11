@@ -149,7 +149,7 @@ class HomeWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                // SizedBox(width: 65), // espaço entre o nome/botão e a foto
+                SizedBox(width: 20), // espaço entre o nome/botão e a foto
                 // 
                 CircleAvatar(
                   backgroundImage: NetworkImage('https://picsum.photos/200'),

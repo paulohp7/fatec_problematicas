@@ -58,9 +58,6 @@ List<Map<String, String>> problemas = [
                     color: Color(0xFF3D3D3D),
                   ),
                 ),
-
-                SizedBox(width: 30), // espaço entre o bem-vindo e o logout
-                
                 Container(
                   padding: EdgeInsets.all(2), // Tamanho do círculo
                   decoration: BoxDecoration(
@@ -80,78 +77,65 @@ List<Map<String, String>> problemas = [
           ),
         ),
       ),
+
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 20),
+        margin: EdgeInsets.symmetric(vertical: 40, horizontal: 20),
         decoration: BoxDecoration(
           border: Border.all(
-            color: Colors.black, // Cor da borda
-            width: 2,          // Largura da borda
+            color: Colors.grey, // Cor da borda
+            width: 1,          // Largura da borda
           ),
-          borderRadius: BorderRadius.circular(12), // Opcional: para bordas arredondadas
+          borderRadius: BorderRadius.circular(22), // Opcional: para bordas arredondadas
         ),
         child: ListView.builder(
           itemCount: problemas.length,
           itemBuilder: (context, index) {
-            return FractionallySizedBox(
-              widthFactor: 0.9, // Define a largura como 90% do pai
-              child: GestureDetector(
-                onTap: () {
-                  // Redireciona para a página '/subject'
-                  Navigator.pushNamed(context, '/subject');
-                },
-                child: Card(
-                  color: const Color.fromARGB(255, 255, 255, 255), // Cor de fundo do Card
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0), // Borda arredondada
-                  ),
-                  elevation: 1, // Sombra no card
-                  margin: const EdgeInsets.symmetric(vertical: 3), // Margem entre os cards
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0), // Espaçamento interno
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          problemas[index]['titulo'] ?? '',
-                          style: const TextStyle(
-                            fontSize: 18, // Tamanho da fonte do título
+            return Column(
+              children: [
+                Center( // Centraliza o conteúdo do ListTile
+                  child: Container(
+                    margin: EdgeInsets.all(15),
+                    width: MediaQuery.of(context).size.width * 0.8, // Define uma largura customizada
+                    child: ListTile(
+                      title: Center(
+                        child: Text(
+                          'Um assunto qualquer',
+                          style: TextStyle(
+                            fontFamily: 'Inter',
                             fontWeight: FontWeight.bold,
-                            color: Colors.black87, // Cor do texto do título
+                            fontSize: 25,
+                            color: Color(0xFF13715B),
                           ),
-                        ),
-                        const SizedBox(height: 8), // Espaçamento entre o título e os tipos
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              problemas[index]['AreaSaude'] ?? 'Tipo não informado',
-                              style: const TextStyle(
-                                fontSize: 10, // Tamanho da fonte do tipo
-                                color: Colors.grey, // Cor do texto do tipo
+                        )
+                       ),
+
+                       subtitle: Center(
+                         child: Container(
+                          margin: EdgeInsets.only(top: 15),
+                           child: Text(
+                              'Descrição do assunto...',
+                              style: TextStyle(
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w600,
+                                fontSize: 19,
+                                color: Color.fromARGB(255, 74, 74, 74),
                               ),
                             ),
-                            Text(
-                              problemas[index]['AreaComputacional'] ?? 'Bug não informado',
-                              style: const TextStyle(
-                                fontSize: 10, // Tamanho da fonte do bug
-                                color: Colors.redAccent, // Cor do texto do bug
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 8), // Espaçamento entre o tipo/bug e a descrição
-                        Text(
-                          problemas[index]['descricao'] ?? '',
-                          style: const TextStyle(
-                            fontSize: 12, // Tamanho da fonte da descrição
-                            color: Colors.black87, // Cor do texto da descrição
-                          ),
-                        ),
-                      ],
+                         ),
+                       ),
+                      onTap: () => Navigator.pushNamed(context, '/subject'),
                     ),
                   ),
                 ),
-              ),
+
+                Divider(
+                  color: Colors.grey,
+                  thickness: 1, // Espessura da linha
+                  indent: 70,   // Espaçamento à esquerda
+                  endIndent: 70, // Espaçamento à direita
+                ),
+                
+              ],
             );
           },
         ),
